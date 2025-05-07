@@ -1,0 +1,10 @@
+opencv-python==4.8.1.78
+numpy==1.26.3
+pillow==10.3.0
+pydantic==2.5.3
+pygame==2.5.2
+mediapipe==0.10.21
+imutils==0.5.4
+
+PyYAML~=6.0.2
+matplotlib~=3.10.1

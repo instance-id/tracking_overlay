@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},{
+			"name": "mediapipe",
+			"path": "/mnt/x/GitHub/google-ai-edge/mediapipe"
+		},{
+			"name": "mediapipe_samples",
+			"path": "/mnt/x/GitHub/google-ai-edge/mediapipe-samples"
+		}
+	],
+	"settings": {}
+}

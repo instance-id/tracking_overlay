@@ -1,0 +1,94 @@
+# High-Tech Camera Overlay System Configuration
+
+# Application settings
+title: "Tracking Overlay"
+source: 0 # Camera index or video file path
+max_fps: 30
+display_width: null # Set to null for auto (same as camera)
+display_height: null # Set to null for auto (same as camera)
+
+# Camera settings
+camera_width: null # Set to null for default
+camera_height: null # Set to null for default
+
+max_input_width: 1280
+max_input_height: 720
+maintain_aspect_ratio: true
+
+# Video orientation settings
+flip_horizontal: true # Set to true to flip the video horizontally
+flip_vertical: false # Set to true to flip the video vertically
+rotation_degrees: 90 # Options: 0, 90, 180, or 270
+
+track_every_n_frames: 10
+
+# Detection Settings
+face_detection_model: "face_detection_model.tflite"
+face_detection_threshold: 0.2
+
+object_detection_model: "object_detection_model.tflite"
+object_detection_threshold: 0.5
+
+hand_detection_model: "hand_detection_model.tflite"
+hand_detection_threshold: 0.5
+
+pose_detection_model: "pose_detection_model.tflite"
+pose_detection_threshold: 0.5
+
+# Grid settings
+grid_cols: 9
+grid_rows: 5
+grid_color: [ 0, 255, 255, 50 ] # Cyan with alpha
+grid_line_thickness: 1
+grid_animation_speed: 0.2
+
+# Grid cell settings
+cell_highlight_alpha: 50
+cell_active_color: [ 50, 150, 150 ]
+cell_inactive_color: [ 50, 200, 255 ]
+
+# Motion detection settings
+motion_sensitivity: 0.7 # Higher value means less sensitive (0.0-1.0)
+motion_blur: 5 # Gaussian blur kernel size (odd number)
+motion_threshold: 50 # Binary threshold value for motion detection
+
+# Reticle settings
+reticle_size: 85
+reticle_color: [ 255, 50, 50 ] # Red
+reticle_line_thickness: 2
+reticle_animation_speed: 0.03
+
+# Reticle rotating elements settings
+reticle_element_speeds: [ 0.08, 0.04, 0.08, 0.04 ]
+reticle_element_directions: [ 1, -1, 1, -1 ]
+reticle_element_colors: [ [ 255, 50, 50 ], [ 50, 255, 50 ], [ 255, 50, 50 ], [ 255, 255, 50 ] ]
+
+# Reticle movement smoothing
+reticle_smoothing_factor: 0.05 # Lower = smoother but slower tracking (0.05-0.3)
+reticle_smoothing_min_speed: 0.5 # Minimum movement speed in pixels per frame
+reticle_smoothing_max_speed: 30.0 # Maximum movement speed in pixels per frame
+reticle_dampening_factor: 0.7 # Micro-movement dampening (0.0-1.0)
+
+use_simple_tracker: true 
+
+# Face tracking persistence settings
+max_face_detections: 15
+face_persistence_frames: 120 # Increased from 45 to 120 frames for better persistence
+face_history_size: 60 # Increased from 30 to 60 for longer tracking history
+
+# Info panel settings
+info_panel_width: 160
+info_panel_height: 80
+info_panel_header_color: [ 75, 75, 75, 220 ]
+info_panel_color: [ 50, 50, 50, 200 ] # Dark blue with alpha
+info_panel_text_color: [ 245, 255, 255 ] # Cyan
+info_panel_font_size: 11
+info_panel_offset_x: 100
+info_panel_offset_y: -100
+
+# Animation settings
+animation_speed: 0.005
+
+# GPU settings
+use_gpu: true
+gpu_type: "auto" # "auto", "nvidia", "amd", or "none"
